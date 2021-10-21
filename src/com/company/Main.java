@@ -89,7 +89,7 @@ public class Main {
         System.out.println("Умножение: "+polynomial.multiply(new MyPolynomial(4,1)));
         System.out.println(polynomial.evaluate(1));
         MyPolynomial polynomial1 = new MyPolynomial(1, -1, 3, 4, 9);
-        System.out.println(polynomial.add(polynomial1));
+        System.out.println("Сложение: "+polynomial.add(polynomial1));
 
         //############Ball####################
         Container container = new Container(0, 0, 300, 400);
