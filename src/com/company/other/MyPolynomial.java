@@ -61,8 +61,8 @@ public class MyPolynomial {
             {
                 if (i==0) newCoeffs[j]+=coeffs[i]*right.coeffs[j];
                 else if(j==0) newCoeffs[i]+=coeffs[i]*right.coeffs[j];
-                else
-                newCoeffs[i*j+1] += coeffs[i]*right.coeffs[j];
+                else if(i==1||j==1) newCoeffs[i*j+1] += coeffs[i]*right.coeffs[j];
+                else newCoeffs[i*j] += coeffs[i]*right.coeffs[j];
             }
         return new MyPolynomial(newCoeffs);
     }
