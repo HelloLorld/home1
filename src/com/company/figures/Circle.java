@@ -40,4 +40,25 @@ public class Circle {
     public double getArea() {
         return Math.PI * Math.pow(radius, 2);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Circle circle = (Circle) o;
+
+        if (Double.compare(circle.radius, radius) != 0) return false;
+        return color != null ? color.equals(circle.color) : circle.color == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(radius);
+        result = (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (color != null ? color.hashCode() : 0);
+        return result;
+    }
 }

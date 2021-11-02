@@ -84,9 +84,9 @@ public class Main {
         System.out.println("Аргумент: " + new MyComplex(1, Math.sqrt(3)).argument());
 
         //############MyPolynomial############
-        MyPolynomial polynomial = new MyPolynomial(1, -1, 3, 4);
+        MyPolynomial polynomial = new MyPolynomial(-1, 1, 3, 4);
         System.out.println(polynomial);
-        System.out.println("Умножение: "+polynomial.multiply(new MyPolynomial(4,1)));
+        System.out.println("Умножение: "+polynomial.multiply(new MyPolynomial(8,7,6,5,4,1)));
         System.out.println(polynomial.evaluate(1));
         MyPolynomial polynomial1 = new MyPolynomial(1, -1, 3, 4, 9);
         System.out.println("Сложение: "+polynomial.add(polynomial1));

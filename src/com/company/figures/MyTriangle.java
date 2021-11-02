@@ -1,4 +1,5 @@
 package com.company.figures;
+import com.company.figures.MyPoint;
 
 public class MyTriangle {
     private final MyPoint v1;
@@ -48,5 +49,25 @@ public class MyTriangle {
         if ((Math.abs(AB-AC)<=eps) && (Math.abs(AC - BC)<=eps)) return "Equilateral";
         else if ((Math.abs(AB - AC)<=eps) || (Math.abs(AB - BC)<=eps) || (Math.abs(BC - AC)<=eps)) return "Isosceles";
         else return "Scalene";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MyTriangle triangle = (MyTriangle) o;
+
+        if (v1 != null ? !v1.equals(triangle.v1) : triangle.v1 != null) return false;
+        if (v2 != null ? !v2.equals(triangle.v2) : triangle.v2 != null) return false;
+        return v3 != null ? v3.equals(triangle.v3) : triangle.v3 == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = v1 != null ? v1.hashCode() : 0;
+        result = 31 * result + (v2 != null ? v2.hashCode() : 0);
+        result = 31 * result + (v3 != null ? v3.hashCode() : 0);
+        return result;
     }
 }
